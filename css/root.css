@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@font-face{
+    font-family:'DM Sans-Regular', sans-serif;
+    src: url(DMSans-Regular.ttf);
+}
+
+:root{
+
+    /*TIpografías*/
+--type-01: 'DM Sans-Regular', sans-serif;
+
+/*Colores*/
+--primary: #f26f21;
+--primary-light: #ec8e58;
+
+--secondary: #da2128;
+
+--neutral-00: #FFFFFF;
+
+--neutral-01: #000000;
+}
+

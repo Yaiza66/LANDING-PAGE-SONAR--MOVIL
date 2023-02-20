@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorteo Sonar</title>
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" href="img/sonar.png" type="logo_sonar/png" />
+    <link rel="stylesheet" href="img/2023_logo_derecha.svg" />
+  </head>
+  <body>
+    <video autoplay loop muted>
+      <source src="assets/video-fondo-pantalla.webm" />
+    </video>
+
+    <div class="container">
+      <!-- start nav -->
+      <nav class="barraMenu">
+        <ul>
+          <li id="logo">
+            <a href="https://www.sonar.es/">
+              <img src="img/2023_logo_derecha.svg" alt="Logo sonar"
+            /></a>
+          </li>
+          <!-- start menu -->
+          <li>
+            <a href="#">Programa</a>
+            <!-- start menu desplegable -->
+            <ul class="dropdown">
+              <li>Conciertos & DJs</li>
+              <li>Artistas de Día/Noche</li>
+            </ul>
+          </li>
+          <!-- end menu desplegable -->
+          <li>
+            <a href="#">Tickets</a>
+          </li>
+          <li>
+            <a href="#">Información Práctica</a>
+            <ul class="dropdown">
+              <li>Cómo llegar</li>
+              <li>Espacios</li>
+              <li>Itinerario</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Noticias </a>
+          </li>
+          <li class="damm-container">
+            <a href="#">
+              <img src="img/logo-estrella-damm.webp" alt="Logo Damm" id="damm"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+
+      <!--    TITULO   -->
+
+      <div class="titulo">
+        <h1>
+          Este verano Sonar está en la playa
+          <span style="color: #f26f21">sólo una noche</span>
+        </h1>
+
+        <p id="frase-30Aniver">
+          Llega al festival una edición especial para celebrar por todo lo alto
+          el 30 aniversario.
+        </p>
+        <div class="textoAnimadoLinea">
+          <p id="textoAnimado">
+            Sonar sortea 2 entradas para esta noche mágica.<br/>¡Compártelo con
+            tus amigos!
+          </p>
+        </div>
+      </div>
+
+      <!-- FORMULARIO  -->
+
+      <div class="main">
+        <form action="datos.php" method="post" id="formulario">
+          <div class="cajas-datosPersonales">
+            <div class="form-group">
+              <label for="name">Nombre y Apellidos</label>
+              <input
+                type="text"
+                name="nombre_apellidos"
+                id="name"
+                placeholder="Nombre y Apellidos"
+                tabindex="1"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input
+                type="email"
+                name="correo-electronico"
+                id="email"
+                placeholder="Correo electronico"
+                tabindex="2"
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="codigo_postal">Código postal</label>
+              <input
+                pattern="[0-9]{5}"
+                type="text"
+                name="codigo_postal"
+                id="postal"
+                placeholder="Código postal"
+                tabindex="3"
+                required
+              />
+            </div>
+          </div>
+        </form>
+
+        <div id="legal">
+          <input
+            type="checkbox"
+            name="acepta_condiciones"
+            required
+            tabindex="4"
+          />
+          <label for="legal"
+            >Acepto las condiciones del servicio<a
+              href="legales.html"
+              style="color: white; padding: 10px"
+              >ver condiciones</a
+            >
+          </label>
+        </div>
+
+        <div type="submit" id="cajaCTA">
+          <input id="CTA" type="submit" value="¡PARTICIPA!" />
+        </div>
+
+        <div id="audio">
+          <audio autoplay controls loop>
+            <source src="assets/Chase-the-sun.mp3" type="audio/mp3" />
+          </audio>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

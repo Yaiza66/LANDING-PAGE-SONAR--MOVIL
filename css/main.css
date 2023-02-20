@@ -1,0 +1,642 @@
+@charset "utf-8";
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;   
+}
+
+@media (min-width: 579px){
+div.container {
+    display: grid; 
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    grid-template-rows: 0.3fr 0.8fr 1fr;
+    grid-template-areas:
+    "barraMenu barraMenu barraMenu"
+    "titulo titulo titulo"
+    "main main main";  
+    font-family: var(--type-01);
+    background-color: rgba(0, 0, 0, 0.238);
+    background-size: 100%;
+}
+
+.barraMenu { grid-area: barraMenu; }
+.titulo { grid-area: titulo; }
+.main { grid-area: main; }
+
+
+/*----- HEADER -----*/
+
+.barraMenu{
+    min-width: 100vw;
+    height: 60px;
+    position: sticky;
+    align-self: start;
+    background-color: #FFFFFF;
+}
+
+#logo img{
+    width: 4rem;
+    max-height: 4rem;
+    }
+
+nav ul{
+    width: 100%;
+    height: inherit;
+    list-style-type:none;
+    display:flex;
+    flex-direction: row;
+    }
+
+nav ul li {
+    display: flex;
+    flex: auto;
+    align-items: center;
+    justify-content: center;
+    float: none;
+    border-left: 2.5px solid #000000;
+}
+
+#damm{
+   max-width: 200px;
+   width: 150px;
+}
+
+nav ul li a{
+    color: #000000;
+    text-decoration:none;
+    font-size: 1em;
+    font-weight: bold;
+   
+}
+nav ul li:hover{
+   background-color: var(--secondary);
+   
+}
+nav ul li a:hover{
+    color:#000000;
+    position: relative;
+}
+
+ul.dropdown {
+    display:none;
+    flex-direction: column;
+    float: none;
+    text-align: center;
+    background-color: var(--primary-light);   
+}
+
+li:hover .dropdown{
+    display:block;
+    position:absolute;
+    width: 300px;
+    float: none;
+    top: 60px; 
+}
+
+ul.dropdown li{
+    float: none;
+   display: block;
+   position:relative; 
+}
+
+/*-----  TITULO DESKTOP  -----*/
+
+video{
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: tranSlateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+.titulo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -50px;
+}
+
+
+h1{
+    font-size: 36px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5em;
+}
+
+h1 span{
+    width:max-content;
+    height:fit-content;
+    font-size: 48px;
+    align-items: center;
+    text-align: center;
+    color: #f26f21;
+}
+
+.titulo p{
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+
+    @keyframes bombeo{
+        from { transform: none; }
+        50% { transform: scale(1.4); }
+        to { transform: none; }
+    }
+    
+    @keyframes cambioColor{
+        0%{
+            color:  #f26f21;
+        }
+        25%{
+            color: white;
+            
+        }
+        50%{
+            color: white;
+            
+        }
+        75%{
+            color: white;
+            
+        }
+        100%{
+            color: #f26f21;
+        }
+    }
+
+
+
+.titulo div.textoAnimadoLinea p{
+    position: relative;
+    margin: 3em 0em 0em 0em;
+    font-weight: 800;
+    animation: bombeo 3000ms ease-in-out infinite,
+    cambioColor 3000ms ease-in-out infinite ;   
+}
+
+
+
+
+/*------  FORMULARIO DESKTOP  -----*/
+
+
+#formulario{
+    display: flex;
+    height: 150px;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    border: none;
+   
+    font-size: 1em;
+}
+
+label{
+    color: #ffffff;
+}
+
+
+div.container{
+    align-items: center;
+}
+
+ form div.cajas-datosPersonales{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+   
+}
+
+div.cajas-datosPersonales .form-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    margin: 0px 30px 0px 30px;
+}
+
+div.cajas-datosPersonales div label{
+    border: none;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+div.cajas-datosPersonales div input{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px 0px 10px 20px;
+min-width: 350px;
+height: 40px;
+background:var(--neutral-00);
+border-radius: 14px;
+border: none;
+font-size: 16px;
+}
+
+#legal{
+    display: flex;
+    margin: 10px 0px;
+    justify-content: center;
+}
+input[type=checkbox] {
+    transform: scale(1.3);
+    margin: 0px 16px 0px 8px;
+}
+
+#cajaCTA{
+    display: flex;
+    justify-content:center;
+    width:100%;
+    margin-top: 20px;
+}
+
+#CTA{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+    padding: 10px 40px;
+    width:min-content;
+    color: #ffffff;
+    background: none;
+    box-shadow: 4px 4px 5px #C1996A;
+    border-color: var(--secondary);
+    border-width: 5px;
+    border-radius: 14px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#CTA:hover{
+    color: black;
+    background-color: red;
+}
+#audio{
+    display: flex;
+    justify-content: right;
+    position: relative;
+    right: 50px;
+    bottom: 50px;
+    
+  
+}
+#audio audio{
+  
+   width: 200px;
+   height: 40px; 
+}
+
+}
+
+
+/*----------------------------------*/
+/*---------  VERSIÓN MÓVIL  --------*/
+
+
+
+@media (max-width: 578px){
+    
+    .container{
+        display: grid; 
+        height: 100vh;
+        width: 100vw;
+        max-width: 100%;
+            grid-template-rows: 0.1fr 2fr 1fr;
+            grid-template-areas:
+            "barraMenu"
+            "titulo"
+            "main";
+        font-family: var(--type-01);
+        background-color: #0000003d;
+        background-attachment: fixed;
+        flex-wrap: nowrap;   
+        }
+
+        .barraMenu{
+            max-width: 100vw;
+            min-width: 100%;
+            position: sticky;
+            align-self: start;
+            background-color: #FFFFFF;
+        }
+
+        #logo{
+            justify-content: center;
+            background-color: var(--primary-light);
+            max-height: 3em;
+            padding: 0;
+        }
+
+        #logo img{
+            width: 3em;
+            }
+        
+        nav ul{  
+            width: 100%;
+            list-style-type:none;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+            border-left: 0.30em solid #da2128;
+        }
+        
+        nav ul li {
+            display: flex;
+            flex: auto; 
+            position: relative;
+            padding: 0 0 0em 1em;
+            align-items: center;
+            float: none; 
+        }
+        
+        .damm-container{
+            border: none;
+        }
+
+        #damm{
+           max-width: 100px;
+           width: 80px; 
+        }
+        
+        nav ul li a{
+            display: inline-block; 
+            position: relative;
+            justify-content:center;
+            align-items: center;
+            color: #000000;
+            text-decoration:none;
+            font-size: 1em;
+            font-weight: bold;  
+        }
+
+        nav ul :nth-child(1n+2){
+            margin: 3px 0 2px 0;  
+        }
+
+        nav ul :last-child{
+            margin: 0;
+            border: none;
+        }
+
+        nav ul li:hover{
+           background-color: var(--secondary);
+           font-size: 1em;
+        }
+
+        nav ul li a:hover{
+            color:#000000;
+            position: relative;
+        }
+        
+        ul.dropdown {
+            display:none;
+            flex-direction: column;
+            float: none;
+            text-align: center;
+            background-color: var(--primary-light);
+            height: 100%;
+            box-sizing: content-box;
+        }
+        
+        li:hover .dropdown{
+            display:block;
+            position:relative;
+            float: none;
+            margin-left: 1em;
+            text-align: left;
+        }
+        
+        ul.dropdown li{
+            float: none;
+            display: block;
+            position:relative; 
+            padding-left: 1em;
+        }
+
+        /*-------  TITULO  MÓVIL -------*/
+        
+    video{
+        position:absolute;
+        max-width: 100vh;
+        width: 100%;
+        top: 40%;
+        left: 50%;
+        transform: tranSlateX(-50%) translateY(-50%);
+        z-index: -1;
+    }
+
+    .titulo{
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 1em;
+        height: 8em;
+    }
+
+    h1{
+        display: contents;
+        width:max-content;
+        font-size: 1.2em;
+        font-weight: 600;
+        /* identical to box height */
+        text-align:center;
+        color: #ffffff;
+    }
+
+    h1 span{
+    width:fit-content;
+    height:fit-content;
+    font-size: 1.3em;
+    align-items: center;
+    text-align: justify;
+    color: #f26f21;
+    }
+
+    .titulo p{
+        display: none;
+        /* color: #FFFFFF;
+        font-size: 0.9em;
+        text-align: center;
+        padding-top: 1em; */
+    }
+
+    
+
+
+
+        @keyframes bombeo{
+            from { transform: none; }
+            50% { transform: scale(1.1); }
+            to { transform: none; }
+    }
+
+        @keyframes cambioColor{
+            0%{
+                color:  #f26f21;
+            }
+            25%{
+                color: white;
+            }
+            50%{
+                color: white; 
+            }
+            75%{
+                color: white;
+            }
+            100%{
+                color: #f26f21;
+            }
+        }
+
+    .textoAnimadoLinea{
+        text-align:justify;
+        text-align: center;
+    }
+
+    #textoAnimado{
+        display: flex;
+        position: relative;
+        width: 350px;
+        padding: 0;
+        margin: 20px 0px 0px 0px;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 400;
+        animation: bombeo 3000ms ease-in-out infinite,
+        cambioColor 3000ms ease-in-out infinite ;
+        background-attachment: fixed;
+    }
+
+    /*------ MAIN / FORMULARIO  MÓVIL  -----*/
+
+
+
+    .main{
+        background-color: #000000;
+    }
+
+    #formulario{
+        border: none;
+        margin-bottom: 2em;
+        font-size: 1em;
+    }
+
+
+  
+    div.container{
+        align-items: center;
+    }
+
+    form div.cajas-datosPersonales{
+        display: block;
+        top: -50px;
+        
+        
+    
+    }
+
+    div.cajas-datosPersonales .form-group{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: none;
+        margin: 16px 0 0 0;
+    }
+
+    div.cajas-datosPersonales div label{
+        border: none;
+        margin-bottom: 12px;
+        color: #ffffff;
+    }
+
+    div.cajas-datosPersonales div input{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    
+    width: 16em;
+    height: 1.7em;
+    background:var(--neutral-00);
+    border-radius: 14px;
+    border: none;
+    font-size: 1em;
+    }
+    ::placeholder{
+        padding-left: 30px;
+    }
+
+    #legal{
+        display: flex;
+        margin: 0px 0px 24px 8px;
+        font-size: 12px;
+    }
+    label{
+        color:#FFFFFF;
+    }
+    input[type=checkbox] {
+        transform: scale(1.2);
+        margin: 0px 12px 0px 12px;
+        
+      }
+
+    #cajaCTA{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        width:100%;
+        background-color: #000000;
+    }
+
+    #CTA{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 40px;
+        width:min-content;
+        color: #FFFFFF;
+        box-shadow: 4px 4px 5px #C1996A;
+        border-color: var(--secondary);
+        border-width: 4px;
+        border-radius: 14px;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: var(--secondary);
+    
+    }
+
+    #CTA:hover{
+        color: black;
+        background-color: red;
+    }
+
+    #audio{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin: 50px 0;
+    }
+
+    #audio audio{
+        width: 300px;
+        height: 24px; 
+    }
+
+
+}
